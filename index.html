@@ -1,151 +1,191 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>ARSAM STEAM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARSAM | Roblox Game Developer</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
 body{
-margin:0;
-font-family:sans-serif;
-color:white;
-overflow:hidden;
-
-/* Dark Steam Style */
-background: radial-gradient(circle at top,#1b2838,#0b0f14);
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
 }
 
-/* TOP BAR */
-.topbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:10px 20px;
-background:#171a21;
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
 }
 
-button{
-border:none;
-padding:8px 12px;
-border-radius:6px;
-cursor:pointer;
-background:#66c0f4;
-color:black;
-font-weight:bold;
+.hero::before{
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#2563eb;
+    filter:blur(180px);
+    opacity:.25;
+    animation:float 6s ease-in-out infinite;
 }
 
-/* LAYOUT */
-.container{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-padding:20px;
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-40px);}
 }
 
-/* CARD */
+.content{
+    position:relative;
+    z-index:2;
+    padding:20px;
+}
+
+h1{
+    font-size:5rem;
+    font-weight:800;
+    letter-spacing:8px;
+    text-shadow:0 0 20px #3b82f6;
+}
+
+.subtitle{
+    font-size:1.5rem;
+    color:#60a5fa;
+    margin-top:10px;
+}
+
+.desc{
+    max-width:700px;
+    margin:25px auto;
+    line-height:1.8;
+    color:#d1d5db;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    margin-top:20px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    transition:.3s;
+    font-weight:bold;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px #2563eb;
+}
+
+.section{
+    padding:80px 10%;
+}
+
+.section h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2.5rem;
+}
+
+.skills{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.skill{
+    padding:12px 22px;
+    background:#111827;
+    border:1px solid #2563eb;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 15px #2563eb;
+}
+
 .card{
-width:200px;
-background:#2a475e;
-border-radius:10px;
-overflow:hidden;
-text-align:center;
-transition:0.2s;
+    max-width:900px;
+    margin:auto;
+    background:#0f172a;
+    padding:30px;
+    border-radius:20px;
+    border:1px solid #1e40af;
+    text-align:center;
 }
 
-.card:hover{
-transform:scale(1.05);
-}
-
-.card img{
-width:100%;
-height:120px;
-object-fit:cover;
-}
-
-/* PANEL */
-#panel{
-display:none;
-position:fixed;
-right:10px;
-top:60px;
-background:#171a21;
-padding:15px;
-border-radius:10px;
-}
-
-input{
-display:block;
-margin:5px 0;
-padding:8px;
-border:none;
-border-radius:5px;
+footer{
+    text-align:center;
+    padding:30px;
+    color:#9ca3af;
 }
 </style>
 </head>
-
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-<div>🎮 ARSAM STEAM</div>
-<button onclick="togglePanel()">⚙ Add Game</button>
-</div>
+<section class="hero">
+    <div class="content">
+        <h1>ARSAM</h1>
+        <p class="subtitle">Roblox Game Developer 🎮</p>
 
-<!-- PANEL -->
-<div id="panel">
-<h3>Add Game</h3>
-<input id="name" placeholder="Game Name">
-<input id="link" placeholder="Game Link">
-<input id="img" placeholder="Image URL">
-<button onclick="addGame()">Add</button>
-</div>
+        <p class="desc">
+            Welcome to my portfolio.
+            I create Roblox games, build interactive experiences,
+            and learn new technologies every day.
+        </p>
 
-<!-- GAMES -->
-<div id="games" class="container"></div>
+        <a class="btn" href="https://github.com/arsam109" target="_blank">
+            View My GitHub 🚀
+        </a>
+    </div>
+</section>
 
-<script>
+<section class="section">
+    <h2>My Skills</h2>
 
-// Load saved games
-let games = JSON.parse(localStorage.getItem("games")) || [];
+    <div class="skills">
+        <div class="skill">Roblox Studio</div>
+        <div class="skill">Lua</div>
+        <div class="skill">Game Design</div>
+        <div class="skill">Building</div>
+        <div class="skill">UI Design</div>
+        <div class="skill">Minecraft PvP</div>
+    </div>
+</section>
 
-function render(){
-let container=document.getElementById("games");
-container.innerHTML="";
+<section class="section">
+    <div class="card">
+        <h2>About Me</h2>
 
-games.forEach(g=>{
-let card=document.createElement("div");
-card.className="card";
-card.innerHTML=`
-<img src="${g.img}">
-<h3>${g.name}</h3>
-<button onclick="window.open('${g.link}')">Play</button>
-`;
-container.appendChild(card);
-});
-}
+        <p style="margin-top:20px;line-height:2;">
+            Hi! I'm Arsam.
+            I'm passionate about creating games in Roblox and learning
+            new programming skills. My goal is to build fun experiences
+            that players enjoy and remember.
+        </p>
+    </div>
+</section>
 
-render();
-
-// Toggle panel
-function togglePanel(){
-let p=document.getElementById("panel");
-p.style.display = p.style.display==="block" ? "none":"block";
-}
-
-// Add game
-function addGame(){
-let name=document.getElementById("name").value;
-let link=document.getElementById("link").value;
-let img=document.getElementById("img").value;
-
-if(name && link && img){
-games.push({name,link,img});
-localStorage.setItem("games",JSON.stringify(games));
-render();
-}
-}
-
-</script>
+<footer>
+    © 2026 ARSAM • Roblox Game Developer
+</footer>
 
 </body>
 </html>
+```
