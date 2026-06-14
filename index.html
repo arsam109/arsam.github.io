@@ -1,191 +1,101 @@
-</html>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARSAM | Roblox Game Developer</title>
+<title>Arsam Gaming</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
 body{
-    background:#050816;
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(-45deg,#ff0000,#00ff00,#00ffff,#ff00ff);
+    background-size:400% 400%;
+    animation:bg 10s ease infinite;
     color:white;
-    overflow-x:hidden;
-}
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
     text-align:center;
-    position:relative;
 }
 
-.hero::before{
-    content:'';
-    position:absolute;
-    width:500px;
-    height:500px;
-    background:#2563eb;
-    filter:blur(180px);
-    opacity:.25;
-    animation:float 6s ease-in-out infinite;
-}
-
-@keyframes float{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-40px);}
-}
-
-.content{
-    position:relative;
-    z-index:2;
-    padding:20px;
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
 h1{
-    font-size:5rem;
-    font-weight:800;
-    letter-spacing:8px;
-    text-shadow:0 0 20px #3b82f6;
-}
-
-.subtitle{
-    font-size:1.5rem;
-    color:#60a5fa;
-    margin-top:10px;
-}
-
-.desc{
-    max-width:700px;
-    margin:25px auto;
-    line-height:1.8;
-    color:#d1d5db;
-}
-
-.btn{
-    display:inline-block;
-    padding:15px 35px;
-    margin-top:20px;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    border-radius:50px;
-    transition:.3s;
-    font-weight:bold;
-}
-
-.btn:hover{
-    transform:translateY(-5px);
-    box-shadow:0 0 25px #2563eb;
-}
-
-.section{
-    padding:80px 10%;
-}
-
-.section h2{
-    text-align:center;
-    margin-bottom:40px;
-    font-size:2.5rem;
-}
-
-.skills{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-}
-
-.skill{
-    padding:12px 22px;
-    background:#111827;
-    border:1px solid #2563eb;
-    border-radius:30px;
-    transition:.3s;
-}
-
-.skill:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 15px #2563eb;
+    font-size:70px;
+    margin-top:50px;
+    text-shadow:0 0 20px white;
 }
 
 .card{
-    max-width:900px;
+    width:80%;
+    max-width:700px;
     margin:auto;
-    background:#0f172a;
-    padding:30px;
+    background:rgba(0,0,0,0.5);
     border-radius:20px;
-    border:1px solid #1e40af;
-    text-align:center;
+    padding:30px;
+    backdrop-filter:blur(8px);
 }
 
-footer{
-    text-align:center;
-    padding:30px;
-    color:#9ca3af;
+button{
+    font-size:24px;
+    padding:15px 30px;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    background:cyan;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    background:magenta;
+}
+
+a{
+    color:cyan;
+    text-decoration:none;
+    font-size:22px;
 }
 </style>
 </head>
+
 <body>
 
-<section class="hero">
-    <div class="content">
-        <h1>ARSAM</h1>
-        <p class="subtitle">Roblox Game Developer 🎮</p>
+<h1>ARSAM GAMING</h1>
 
-        <p class="desc">
-            Welcome to my portfolio.
-            I create Roblox games, build interactive experiences,
-            and learn new technologies every day.
-        </p>
+<div class="card">
 
-        <a class="btn" href="https://github.com/arsam109" target="_blank">
-            View My GitHub 🚀
-        </a>
-    </div>
-</section>
+<h2>Welcome To My Website</h2>
 
-<section class="section">
-    <h2>My Skills</h2>
+<p>🎮 Roblox Game Developer</p>
 
-    <div class="skills">
-        <div class="skill">Roblox Studio</div>
-        <div class="skill">Lua</div>
-        <div class="skill">Game Design</div>
-        <div class="skill">Building</div>
-        <div class="skill">UI Design</div>
-        <div class="skill">Minecraft PvP</div>
-    </div>
-</section>
+<p>💻 Future Web Developer</p>
 
-<section class="section">
-    <div class="card">
-        <h2>About Me</h2>
+<p>🚀 Learning HTML, CSS & JavaScript</p>
 
-        <p style="margin-top:20px;line-height:2;">
-            Hi! I'm Arsam.
-            I'm passionate about creating games in Roblox and learning
-            new programming skills. My goal is to build fun experiences
-            that players enjoy and remember.
-        </p>
-    </div>
-</section>
+<p>😎 12 Years Old</p>
 
-<footer>
-    © 2026 ARSAM • Roblox Game Developer
-</footer>
+<a href="https://arsam109.github.io/arsam.github.io">
+Visit My Website
+</a>
+
+<br><br>
+
+<button onclick="hello()">
+Start Journey
+</button>
+
+</div>
+
+<script>
+function hello(){
+    let name = prompt("What is your name?");
+
+    if(name){
+        alert("Welcome to Arsam Gaming, " + name + "!");
+    }
+}
+</script>
 
 </body>
 </html>
-```
